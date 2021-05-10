@@ -1,0 +1,35 @@
+<section class="container">
+    <section class="sect-head">
+        <h3>Shopping</h3>
+        
+    </section>
+<table class="table">
+<thead>
+    <th>Product</th>
+<th>
+    Quatity
+</th>
+<th>Price</th>
+</thead>
+<tbody>
+    <h4 *ngIf="cartProd.length<=0"> cart is empty</h4>
+    <tr *ngFor="let prod of cartProd">
+        <td class="td-prod-img">
+            <img [src]="prod.p_img" alt="">
+            <small>{{prod.name}}</small>
+        </td>
+        <td>
+            <button class="btn btn-success quatity-btn" (click)="plusFn(prod)">+</button>&nbsp;{{prod.qyt}}&nbsp;<button (click)="minusFn(prod)" class="btn btn-success quatity-btn">-</button>
+        </td>
+        <td>
+            <i class="fa fa-inr"></i>&nbsp;{{prod.qyt*prod.rate}}
+        </td>
+    </tr>
+    <tr *ngIf="cartProd.length>0">
+        <td></td>
+        <td></td>
+        <td><button class="btn btn-success" (click)="showAlert()">Check Out</button></td>
+    </tr>
+</tbody>
+</table>
+</section>

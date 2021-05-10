@@ -1,0 +1,27 @@
+.container{
+    .sect-head{
+        margin: 1.5rem 0;
+    }
+    .table{
+        .td-prod-img{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 6rem;
+                height: 6rem;
+            }
+            small{
+                padding-left: 4em;
+            }
+        }    
+        .quatity-btn{
+            font-size: 2em;
+            width: 2rem;
+            height: 2rem;
+            padding: 0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

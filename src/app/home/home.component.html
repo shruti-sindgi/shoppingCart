@@ -1,0 +1,35 @@
+<section class="container">
+    <section class="sect-head">
+        <h3>Shopping</h3>
+        <div>
+            <input type="text" name="searhinput" placeholder="search..." [(ngModel)]="searchInput">
+            <!-- <button class="btn btn-primary">search</button> -->
+        </div>
+        <div class="div-cart">
+            <i class="fa fa-shopping-cart" (click)="goToCart()"></i>
+        </div>
+    </section>
+    <section class="sect-body">
+        
+      <div class="row">
+          <div class="col-md-3" *ngFor="let prod of products | filter:searchInput">
+            <div class="card">
+                <div class="card-body">
+                    <div class="div-img">
+                        <img [src]="prod.p_img" >
+                        <h6>{{prod.name}}</h6>
+                    </div>
+                    <div class="div-footer">
+                        <div class="div-rate" >
+                            <label><i class="fa fa-inr" ></i>&nbsp;{{prod.rate}}</label>
+                        </div>
+                        <div class="div-btn" >
+                            <button class="btn btn-success" appStyle (click)="addCart(prod)">Add Cart</button>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</section>
